@@ -1,2 +1,7 @@
 # Ignoring files from the WebDev course exercises. There's simply too many of them.
 *wbdv_ex/
+
+
+#Ignoring all node modules
+
+*node_modules/

@@ -1,0 +1,112 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    cursor:default;
+}
+body{
+    background-color: black;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% auto 15%;
+    grid-template-columns: 50% 20% 30%;
+    color:white;
+}
+
+.stars {
+    background-image: url('../images/bgtop.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    grid-column: 1/-1;
+    display:flex;
+}
+
+
+#post_content{
+    font-family: Georgia,Times,serif;
+}
+
+/*Put layout here, on content*/
+
+footer{
+    
+    background-image: url('../images/bgbottom.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    grid-row: 3 / -1;
+    grid-column: 1 / -1;
+
+}
+
+@media (max-width: 450px) {
+    .stars {
+        background-size: cover;
+    }
+    
+    footer{
+        background-size:cover ;
+    }
+}
+.main{
+    grid-column: 1/-1;
+    display: flex;
+}
+.container{
+    width: 70%;
+    margin-left:auto;
+    margin-right: auto;
+    display:grid;
+    grid-template-rows: auto;
+    grid-template-columns: 70% auto;
+}
+.date{
+    font-family: Georgia,Times, serif;
+    letter-spacing: 0.8px;
+    font-size: 0.85rem;
+    color:rgb(200,200,200);
+
+}
+.titulo{
+    /* margin-left: 15% !important;
+    margin-right: 15% !important; */
+    width: 70%;
+    margin: auto !important;
+}
+/* 
+.menu-toggle{
+    background-image: url("./menu_icon.png");
+    background-size: contain;
+    visibility: hidden;
+    position:fixed;
+    top:30%;
+    right: 1%;
+    width: 30px;
+    height: 30px;
+} */
+   
+p{
+    background-color: black !important;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: rgb(205,205,205);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 3%;
+}
+.header-menu{
+    background-color: black;
+}
+.title{
+    background-color:rgb(0,0,70) !important; 
+}
+.is-dark{
+    background-color:rgb(0,0,70) !important; 
+}
+
+.nes-input.is-dark{
+    background-color: black !important;
+    color: rgb(205,205,205);
+}
+.nes-textarea.is-dark{
+    background-color: black !important;
+    color: rgb(205,205,205);
+}

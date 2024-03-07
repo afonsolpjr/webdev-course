@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %>
+<!-- Post goes here -->
+<h1>
+    <%= post.title %>
+</h1>
+<span class="date">
+    criado em <%= post.data %> às <%= post.hora %>
+</span>
+<br><br>
+<p>
+    <%= post.content %>
+</p>
+<section>
+  
+  <a class="nes-btn" href="/edit?id=<%= post.id %>">Editar post</a>
+    <button type="button" class="nes-btn is-error" id="btn-delete">
+        Deletar post
+    </button>
+    <dialog class="nes-dialog is-dark is-rounded" id="ask-delete">
+      <form action="/delete?id=<%= post.id %>" method="post">
+        DELETAR POST <br>
+        Você tem certeza que deseja deletar este post?
+        <menu class="dialog-menu">
+          <button type="button" class="nes-btn" id="cancel-delete">Cancel</button>
+          <button type="submit" class="nes-btn is-primary">Confirmar</button>
+        </menu>
+      </form>
+    </dialog>
+  </section>
+<script src="./scripts/postpage.js" charset="utf-8"></script>
+<%- include('partials/post_list&footer.ejs') %>

@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+<!-- Post goes here -->
+<h1>Editar post</h1>
+<span class="date">criado em 07/03/2024</span>
+<br><br>
+<form action="/submit_edit?id=<%= post.id %>" method="post" autocomplete="off">
+    <div class="nes-field is-inline">
+        <label for="post_title">Título do post:</label>
+        <input type="text" id="post_title" name="post_title" class="nes-input is-dark" value="<%= post.title %>">
+    </div>
+    <br>
+    <div class="nes-field">
+        <label for="post_content">Conteúdo:</label>
+        <input type="text" id="post_content" name="post_content" class="nes-textarea is-dark" value="<%= post.content %>">
+    </div>
+    <br>
+    <input type="submit" class="nes-btn" value="Enviar">
+</form>
+
+<%- include('partials/post_list&footer.ejs') %>
