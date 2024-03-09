@@ -1,6 +1,12 @@
 import bodyParser from 'body-parser';
 import express from 'express';
-
+/*
+some features to add
+-Create "most recent posts" page
+- Add responsiveness by shifting lateral menu to bottom, on mobile devices;
+- change the post content input textbox to nes-textarea or <textarea>....
+- use nes.css from node, instead from cdn
+*/
 class Blogpost{
     static number_of_posts = 0;
     constructor(title,content,data,hora){
