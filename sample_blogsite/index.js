@@ -43,21 +43,22 @@ app.post("/submit",(req,res) => {
 })
 
 app.get("/post", (req,res) =>{
-    res.render("post.ejs",{post:posts[req.query.id-1],posts});
+    
+    let post = getPostById(req.query.id);
+    res.render("post.ejs",{post,posts});
 })
 
 app.post("/delete",(req,res)=>{
-    let index = req.query.id-1;
-    posts.splice(index,index);
+    deletePostById(req.query.id);
     res.render("index.ejs",{posts});
 })
 
 app.get("/edit",(req,res) => {
-    let post = posts[req.query.id-1];
+    let post = getPostById(req.query.id);
     res.render("edit.ejs",{post,posts});
 })
 app.post("/submit_edit",(req,res)=>{
-    let post = posts[req.query.id-1];
+    let post = getPostById(req.query.id);
     let now = new Date();
 
     post.title = req.body.post_title;
@@ -67,3 +68,21 @@ app.post("/submit_edit",(req,res)=>{
     res.redirect("/post?id="+post.id);
 
 })
+
+
+function getPostById(id){
+    for(let i =0;i<posts.length;i++){
+        console.log("\t\texpressao: " + id + '==' + posts[i].id + '?\n' + (posts[i].id==id) );
+        if(posts[i].id==id){
+            console.log("\t achei!");
+            return posts[i];
+        }
+    }
+}
+
+function deletePostById(id){
+    for(let i =0;i<posts.length;i++){
+        if(posts[i].id==id)
+            return posts.splice(i,1);
+    }
+}
