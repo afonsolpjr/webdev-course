@@ -28,4 +28,7 @@ request.on("error", (error) =>{
 //res.status(500).send("Failed...");
 });
 
+// If you have a body in a form of JSON object to send:
+// request.write(JSON.stringify(body));
+
 request.end();
