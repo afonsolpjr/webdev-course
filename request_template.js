@@ -2,6 +2,11 @@ const options = {
     hostname: "hostname",
     path: "/",
     method: "GET",
+    // headers: {
+    //     Authorization: 'Basic'|'Bearer'+ new Buffer.from(yourUsername+':'+yourPassword).toString('base64')
+    
+    // Content-Type etc....
+    // }
 }
 
 const request = https.request(options,(response) => {
